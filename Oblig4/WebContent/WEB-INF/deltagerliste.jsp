@@ -22,7 +22,7 @@
 		</tr>
 		<c:forEach items="${festdeltagere}" var="fd">
 			<tr bgcolor="#aaffaa">
-				<td align="center">${kjonn == "mann" ? "&#9794;" : "&#9792;"}</td>
+				<td align="center">${fd.kjonn == "mann" ? "&#9794;" : "&#9792;"}</td>
 				<td>${fd.fornavn} ${fd.etternavn}</td>
 				<td>${fd.mobil}</td>
 			</tr>

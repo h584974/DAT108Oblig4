@@ -1,15 +1,23 @@
 package paamelding;
 
 import java.io.IOException;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import database.Festdeltager;
+import database.FestdeltagerDAO;
+
 @WebServlet("/PaameldingPost")
 public class PaameldingPost extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	@EJB
+	private FestdeltagerDAO festdeltagerDAO;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -61,6 +69,11 @@ public class PaameldingPost extends HttpServlet {
 		if(!Validator.validerKjonn(kjonn)) {
 			request.getSession().setAttribute("kjonnFeilmelding", "Må velge kj&oslash;nn");
 			feil = true;
+		}
+		
+		if(!feil) {
+			Festdeltager nyFestdeltager = new Festdeltager(fornavn,etternavn,Integer.parseInt(mobil),passord,kjonn);
+			festdeltagerDAO.lagreFestdeltager(nyFestdeltager);
 		}
 		
 		request.getSession().setAttribute("feil", feil);
