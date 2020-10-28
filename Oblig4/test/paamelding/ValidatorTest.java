@@ -3,6 +3,8 @@ package paamelding;
 import org.junit.Assert;
 import org.junit.Test;
 
+import validering.Validator;
+
 public class ValidatorTest {
 	
 	@Test

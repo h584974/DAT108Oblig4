@@ -9,9 +9,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import database.Festdeltager;
 import database.FestdeltagerDAO;
+import validering.Validator;
 
 @WebServlet("/PaameldingPost")
 public class PaameldingPost extends HttpServlet {

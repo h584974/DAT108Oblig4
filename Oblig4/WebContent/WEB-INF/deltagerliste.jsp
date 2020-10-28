@@ -42,7 +42,7 @@
 		</c:forEach>
 	</table>
 	<p>
-		<a href="loggut">Ferdig</a>
+		<a href="Loggut">Ferdig</a>
 	</p>
 </body>
 </html>

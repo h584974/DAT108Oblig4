@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import validering.BCrypt;
+
 @Entity
 @Table(schema = "dat108oblig4", name = "festdeltager")
 public class Festdeltager {

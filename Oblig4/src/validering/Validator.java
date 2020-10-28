@@ -1,4 +1,4 @@
-package paamelding;
+package validering;
 
 public class Validator {
 	
