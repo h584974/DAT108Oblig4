@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
 
 <!DOCTYPE html>
 <html>
@@ -21,11 +23,22 @@
 			<th align="left">Mobil</th>
 		</tr>
 		<c:forEach items="${festdeltagere}" var="fd">
-			<tr bgcolor="#aaffaa">
-				<td align="center">${fd.kjonn == "mann" ? "&#9794;" : "&#9792;"}</td>
-				<td>${fd.fornavn} ${fd.etternavn}</td>
-				<td>${fd.mobil}</td>
-			</tr>
+			<c:choose>
+				<c:when test="${fd.mobil == brukernavn}">
+					<tr bgcolor="#aaffaa">
+						<td align="center">${fd.kjonn == "mann" ? "&#9794;" : "&#9792;"}</td>
+						<td>${fd.fornavn} ${fd.etternavn}</td>
+						<td>${fd.mobil}</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+					<tr bgcolor="#ffffff">
+						<td align="center">${fd.kjonn == "mann" ? "&#9794;" : "&#9792;"}</td>
+						<td>${fd.fornavn} ${fd.etternavn}</td>
+						<td>${fd.mobil}</td>
+					</tr>
+				</c:otherwise>
+			</c:choose>
 		</c:forEach>
 	</table>
 	<p>

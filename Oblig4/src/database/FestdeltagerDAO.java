@@ -19,5 +19,9 @@ public class FestdeltagerDAO {
 	public List<Festdeltager> hentAlleFestdeltagere() {
 		return em.createQuery("SELECT f FROM Festdeltager f",Festdeltager.class).getResultList();
 	}
+	
+	public Festdeltager hentFestdeltager(Integer mobil) {
+		return em.find(Festdeltager.class, mobil);
+	}
 
 }

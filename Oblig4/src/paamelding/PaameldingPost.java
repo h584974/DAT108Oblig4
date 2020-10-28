@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -73,7 +74,17 @@ public class PaameldingPost extends HttpServlet {
 		
 		if(!feil) {
 			Festdeltager nyFestdeltager = new Festdeltager(fornavn,etternavn,Integer.parseInt(mobil),passord,kjonn);
-			festdeltagerDAO.lagreFestdeltager(nyFestdeltager);
+			
+			try {
+				festdeltagerDAO.lagreFestdeltager(nyFestdeltager);
+				Cookie innlogget = new Cookie("brukernavn",mobil);
+				innlogget.setMaxAge(300);
+				response.addCookie(innlogget);
+			}
+			catch(Throwable e) {
+				feil = true;
+				request.getSession().setAttribute("mobilFeilmelding", "Deltager med dette nummeret er allerede registrert");
+			}
 		}
 		
 		request.getSession().setAttribute("feil", feil);

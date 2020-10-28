@@ -8,13 +8,12 @@ import javax.persistence.Table;
 @Table(schema = "dat108oblig4", name = "festdeltager")
 public class Festdeltager {
 
-	@Id
 	private String fornavn;
-	
-	@Id
 	private String etternavn;
 	
+	@Id
 	private Integer mobil;
+	
 	private String passord;
 	private String kjonn;
 	
