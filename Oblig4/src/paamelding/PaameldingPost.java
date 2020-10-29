@@ -25,6 +25,7 @@ public class PaameldingPost extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String fornavn = request.getParameter("fornavn");
 		String etternavn = request.getParameter("etternavn");
 		String mobil = request.getParameter("mobil");

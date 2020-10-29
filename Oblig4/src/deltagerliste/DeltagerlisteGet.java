@@ -25,6 +25,7 @@ public class DeltagerlisteGet extends HttpServlet {
 	private FestdeltagerDAO festdeltagerDAO;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		List<Festdeltager> festdeltagere = festdeltagerDAO.hentAlleFestdeltagere();
 		Cookie innlogget = null;
 		
@@ -37,7 +38,6 @@ public class DeltagerlisteGet extends HttpServlet {
 			response.sendRedirect("PaameldingGet");
 		}
 		else {
-			
 			if(festdeltagere != null && !festdeltagere.isEmpty()) {
 				festdeltagere.sort(new Comparator<Festdeltager>() {
 					@Override

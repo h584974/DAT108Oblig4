@@ -14,6 +14,7 @@ public class LogginnFeil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		List<String> feilmeldinger = Arrays.asList("Ugyldig brukernavn og/eller passord");
 		request.setAttribute("feilmeldinger", feilmeldinger);
 		request.getRequestDispatcher("WEB-INF/logginn.jsp").forward(request, response);

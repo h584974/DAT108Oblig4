@@ -26,6 +26,7 @@ public class LogginnPost extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		boolean logginn = false;
 		String mobil = request.getParameter("mobil");
 		String passord = request.getParameter("passord");
