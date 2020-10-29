@@ -45,6 +45,8 @@ public class ValidatorTest {
 	@Test
 	public void testValiderPassordRepetert() {
 		Assert.assertTrue(Validator.validerPassordRepetert("12345678","12345678"));
+		Assert.assertTrue(Validator.validerPassordRepetert("",""));
+		Assert.assertTrue(Validator.validerPassordRepetert(null,null));
 		Assert.assertFalse(Validator.validerPassordRepetert("12345678a","12345678A"));
 		Assert.assertFalse(Validator.validerPassordRepetert("12345678","123456789"));
 		Assert.assertFalse(Validator.validerPassordRepetert("12345678",null));

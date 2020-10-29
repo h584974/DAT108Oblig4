@@ -27,11 +27,9 @@ public class Validator {
 			validert = false;
 		}
 		else {
-			int i2 = 0;
-			int i3 = 0;
 			for(int i = 0; i < passord.length() - 2; i++) {
-				i2 = i + 1;
-				i3 = i + 2;
+				int i2 = i + 1;
+				int i3 = i + 2;
 				
 				if(passord.charAt(i) == passord.charAt(i2) && passord.charAt(i) == passord.charAt(i3)) {
 					validert = false;
