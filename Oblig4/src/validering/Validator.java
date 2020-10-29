@@ -44,7 +44,7 @@ public class Validator {
 	}
 	
 	public static boolean validerPassordRepetert(String passordRepetert, String passord) {
-		return passordRepetert != null && !passordRepetert.isBlank() && passordRepetert.equals(passord);
+		return passordRepetert == null ? passord == null : passordRepetert.equals(passord);
 	}
 	
 	public static boolean validerKjonn(String kjonn) {
