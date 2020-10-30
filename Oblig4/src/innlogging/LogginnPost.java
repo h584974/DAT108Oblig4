@@ -44,10 +44,11 @@ public class LogginnPost extends HttpServlet {
 			Cookie innlogget = new Cookie("brukernavn",mobil);
 			innlogget.setMaxAge(300);
 			response.addCookie(innlogget);
-			response.sendRedirect("DeltagerlisteGet");
+			response.sendRedirect("Deltagerliste");
 		}
 		else {
-			response.sendRedirect("LogginnFeil");
+			request.getSession().setAttribute("feil", "true");
+			response.sendRedirect("Logginn");
 		}
 	}
 

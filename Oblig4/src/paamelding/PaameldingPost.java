@@ -87,7 +87,7 @@ public class PaameldingPost extends HttpServlet {
 		}
 		
 		request.getSession().setAttribute("feil", feil);
-		response.sendRedirect("PaameldingGet");
+		response.sendRedirect("Paameldingsskjema");
 	}
 
 }
