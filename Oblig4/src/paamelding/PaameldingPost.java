@@ -38,8 +38,6 @@ public class PaameldingPost extends HttpServlet {
 		request.getSession().setAttribute("fornavn", fornavn);
 		request.getSession().setAttribute("etternavn", etternavn);
 		request.getSession().setAttribute("mobil", mobil);
-		request.getSession().setAttribute("passord", passord);
-		request.getSession().setAttribute("kjonn", kjonn);
 		
 		Boolean feil = false;
 		
