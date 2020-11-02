@@ -18,6 +18,8 @@ import validering.Validator;
 public class LogginnPost extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	private Validator validator = new Validator();
+	
 	@EJB
 	private FestdeltagerDAO festdeltagerDAO;
 
@@ -32,7 +34,7 @@ public class LogginnPost extends HttpServlet {
 		String passord = request.getParameter("passord");
 		Festdeltager fd = null;
 		
-		if(Validator.validerMobil(mobil) && Validator.validerPassord(passord)) {
+		if(validator.validerMobil(mobil) && validator.validerPassord(passord)) {
 			fd = festdeltagerDAO.hentFestdeltager(Integer.parseInt(mobil));
 		}
 		

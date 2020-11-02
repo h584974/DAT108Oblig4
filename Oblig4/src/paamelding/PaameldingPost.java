@@ -17,6 +17,8 @@ import validering.Validator;
 public class PaameldingPost extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	private Validator validator = new Validator();
+	
 	@EJB
 	private FestdeltagerDAO festdeltagerDAO;
 
@@ -41,32 +43,32 @@ public class PaameldingPost extends HttpServlet {
 		
 		Boolean feil = false;
 		
-		if(!Validator.validerFornavn(fornavn)) {
+		if(!validator.validerFornavn(fornavn)) {
 			request.getSession().setAttribute("fornavnFeilmelding", "Ugyldig fornavn");
 			feil = true;
 		}
 		
-		if(!Validator.validerEtternavn(etternavn)) {
+		if(!validator.validerEtternavn(etternavn)) {
 			request.getSession().setAttribute("etternavnFeilmelding", "Ugyldig etternavn");
 			feil = true;
 		}
 		
-		if(!Validator.validerMobil(mobil)) {
+		if(!validator.validerMobil(mobil)) {
 			request.getSession().setAttribute("mobilFeilmelding", "Ugyldig mobilnummer");
 			feil = true;
 		}
 		
-		if(!Validator.validerPassord(passord)) {
+		if(!validator.validerPassord(passord)) {
 			request.getSession().setAttribute("passordFeilmelding", "Ugyldig passord");
 			feil = true;
 		}
 		
-		if(!Validator.validerPassordRepetert(passordRepetert, passord)) {
+		if(!validator.validerPassordRepetert(passordRepetert, passord)) {
 			request.getSession().setAttribute("passordrepetertFeilmelding", "Passord m&aring; v&aelig;re like");
 			feil = true;
 		}
 		
-		if(!Validator.validerKjonn(kjonn)) {
+		if(!validator.validerKjonn(kjonn)) {
 			request.getSession().setAttribute("kjonnFeilmelding", "Må velge kj&oslash;nn");
 			feil = true;
 		}

@@ -2,15 +2,17 @@ package validering;
 
 public class Validator {
 	
-	public static boolean validerFornavn(String fornavn) {
+	public Validator() {}
+	
+	public boolean validerFornavn(String fornavn) {
 		return fornavn != null && !fornavn.isBlank() && fornavn.length() <= 50;
 	}
 	
-	public static boolean validerEtternavn(String etternavn) {
+	public boolean validerEtternavn(String etternavn) {
 		return etternavn != null && !etternavn.isBlank() && etternavn.length() <= 50;
 	}
 
-	public static boolean validerMobil(String mobil) {
+	public boolean validerMobil(String mobil) {
 		int mobilnr = -1;
 		try {
 			mobilnr = Integer.parseInt(mobil);
@@ -20,7 +22,7 @@ public class Validator {
 		return (mobil.length() == 8 && mobilnr > -1);
 	}
 	
-	public static boolean validerPassord(String passord) {
+	public boolean validerPassord(String passord) {
 		boolean validert = true;
 		
 		if(passord == null || passord.isBlank() || passord.length() < 8 || passord.length() > 64) {
@@ -41,11 +43,11 @@ public class Validator {
 		return validert;
 	}
 	
-	public static boolean validerPassordRepetert(String passordRepetert, String passord) {
+	public boolean validerPassordRepetert(String passordRepetert, String passord) {
 		return passordRepetert == null ? passord == null : passordRepetert.equals(passord);
 	}
 	
-	public static boolean validerKjonn(String kjonn) {
+	public boolean validerKjonn(String kjonn) {
 		return kjonn != null;
 	}
 
