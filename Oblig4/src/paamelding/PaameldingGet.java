@@ -22,7 +22,7 @@ public class PaameldingGet extends HttpServlet {
 		try {
 			innlogget = Arrays.stream(request.getCookies()).filter(c -> c.getName().equalsIgnoreCase("brukernavn")).findAny().get();
 		}
-		catch(NoSuchElementException e) {}
+		catch(Throwable e) {}
 		
 		try {
 			feil = (Boolean)request.getSession().getAttribute("feil");

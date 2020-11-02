@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="js/PaameldingsskjemaController.js" defer></script>
 <meta charset="UTF-8">
 <!-- Fra https://purecss.io/ -->
 <link rel="stylesheet"
@@ -30,7 +31,7 @@
 					name="mobil" value="${mobil}" /> 
 					<font color="red">${mobilFeilmelding}</font>
 			</div>
-			<div class="pure-control-group">
+			<div class="pure-control-group" id="passord">
 				<label for="password">Passord:</label> <input type="password"
 					name="passord" value="" /> 
 					<font color="red">${passordFeilmelding}</font>
