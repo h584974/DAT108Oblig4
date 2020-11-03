@@ -18,28 +18,28 @@
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
-					name="fornavn" value="${fornavn}" /> 
+					name="fornavn" value="${fornavn}" placeholder="Skriv ditt fornavn" required/> 
 					<font color="red">${fornavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input type="text"
-					name="etternavn" value="${etternavn}" /> 
+					name="etternavn" value="${etternavn}" placeholder="Skriv ditt etternavn" required /> 
 					<font color="red">${etternavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="mobil">Mobil (8 siffer):</label> <input type="text"
-					name="mobil" value="${mobil}" /> 
+				<label for="mobil">Mobil (8 siffer):</label> <input type="number"
+					name="mobil" value="${mobil}" placeholder="Skriv ditt mobilnummer" minlength="8" maxlength="8" required/> 
 					<font color="red">${mobilFeilmelding}</font>
 			</div>
 			<div class="pure-control-group" id="passord">
 				<label for="password">Passord:</label> <input type="password"
-					name="passord" value="" /> 
+					name="passord" value="" placeholder="Skriv passord" required/> 
 					<font color="red">${passordFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="passordRepetert">Passord repetert:</label> <input
 					type="password" name="passordRepetert"
-					value="" /> 
+					value="" placeholder="Repeter passord" required/> 
 					<font color="red">${passordrepetertFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
