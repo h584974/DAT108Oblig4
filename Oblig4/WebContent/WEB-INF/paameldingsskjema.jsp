@@ -20,22 +20,22 @@
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
-					name="fornavn" value="${fornavn}" placeholder="Skriv ditt fornavn" required/> 
+					name="fornavn" value="${fornavn}" placeholder="Fornavn" required/> 
 					<font color="red">${fornavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input type="text"
-					name="etternavn" value="${etternavn}" placeholder="Skriv ditt etternavn" required /> 
+					name="etternavn" value="${etternavn}" placeholder="Etternavn" required /> 
 					<font color="red">${etternavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="mobil">Mobil (8 siffer):</label> <input type="number"
-					name="mobil" value="${mobil}" placeholder="Skriv ditt mobilnummer" minlength="8" maxlength="8" required/> 
+				<label for="mobil">Mobil (8 siffer):</label> <input type="text"
+					name="mobil" value="${mobil}" placeholder="Mobilnummer" pattern="[0-9]{8}" required/> 
 					<font color="red">${mobilFeilmelding}</font>
 			</div>
 			<div class="pure-control-group" id="passord">
 				<label for="password">Passord:</label> <input type="password"
-					name="passord" value="" placeholder="Skriv passord" required/> 
+					name="passord" value="" placeholder="Passord" pattern=".{8,64}" required/> 
 					<font color="red">${passordFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
