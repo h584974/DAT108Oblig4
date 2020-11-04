@@ -38,7 +38,7 @@
 					onmouseover="this.parentElement.querySelector('#passordinfo').textContent = 'Passordstyrke regnes ut ifra lengde. 1-7 er ugyldig. 8-15 er svakt. 16-64 er sterkt.'"
 					onmouseout="this.parentElement.querySelector('#passordinfo').textContent = '${passordFeilmelding}'"
 					oninput="
-							if(this.value.length < 8) {
+							if(this.value.length < 8 || this.value.length > 64) {
 								this.style.border = 'solid red';
 							}
 							else if(this.value.length < 16) {
