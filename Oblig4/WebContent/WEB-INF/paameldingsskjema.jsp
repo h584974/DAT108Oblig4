@@ -35,7 +35,7 @@
 			</div>
 			<div class="pure-control-group" id="passorddiv">
 				<label for="password">Passord:</label> <input type="password"
-					name="passord" id="passord" pattern=".{8,64}" required/> 
+					name="passord" placeholder="Passord" id="passord" pattern=".{8,64}" required/> 
 					<font color="red">${passordFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
