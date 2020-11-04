@@ -8,13 +8,22 @@ class PaameldingsskjemaController {
 	}
 
 	run() {
-		const passdiv = document.getElementById("passorddiv");
+		const root = document.gegElementById("rootform");
+		const passdiv = document.querySelector("#passorddiv");
 		const passinput = passdiv.querySelector("#passord");
-		passinput.addEventListener("mouseover",this.melding,true);
+		passinput.addEventListener("eventinput",valider(passinput.textContent),true);
 	}
 
-	melding() {
-		alert("Lima");
+	valider(passord) {
+		if(passord.length < 8) {
+			passinput.style.border = "solid red";
+		}
+		else if(passord.length < 16) {
+			passinput.style.border = "solid yellow";
+		}
+		else {
+			passinput.style.border = "solid green";
+		}
 	}
 
 }

@@ -18,7 +18,7 @@ public class Logginn extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String feil = (String)request.getSession().getAttribute("feil");
+		String feil = (String)request.getSession().getAttribute("logginnfeil");
 		
 		if(feil != null) {
 			request.getSession().invalidate();

@@ -16,7 +16,7 @@
 </head>
 <body>
 	<h2>Påmelding</h2>
-	<form method="post" class="pure-form pure-form-aligned" action="PaameldingPost">
+	<form id="rootform" method="post" class="pure-form pure-form-aligned" action="PaameldingPost">
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
@@ -35,8 +35,10 @@
 			</div>
 			<div class="pure-control-group" id="passorddiv">
 				<label for="password">Passord:</label> <input type="password"
-					name="passord" placeholder="Passord" id="passord" pattern=".{8,64}" required/> 
-					<font color="red">${passordFeilmelding}</font>
+					name="passord" placeholder="Passord" id="passord" pattern=".{8,64}" required 
+					onmouseover="this.parentElement.querySelector('#passordinfo').textContent = 'Passordstyrke regnes ut ifra lengde. 1-7 er ugyldig. 8-15 er svakt. 16-64 er sterkt.'"
+					onmouseout="this.parentElement.querySelector('#passordinfo').textContent = '${passordFeilmelding}'"/> 
+					<font id="passordinfo" color="red">${passordFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="passordRepetert">Passord repetert:</label> <input
@@ -54,9 +56,11 @@
 			</div>
 			<div class="pure-controls">
 				<button type="submit" class="pure-button pure-button-primary">Meld
-					meg på</button>
+					meg på</button>&ensp;
+				<button type="submit" form="logginn" class="pure-button pure-button-primary">Logg inn</button>
 			</div>
 		</fieldset>
 	</form>
+	<form action="Logginn" method="get" id="logginn"></form>
 </body>
 </html>

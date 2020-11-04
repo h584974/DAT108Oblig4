@@ -49,7 +49,7 @@ public class LogginnPost extends HttpServlet {
 			response.sendRedirect("Deltagerliste");
 		}
 		else {
-			request.getSession().setAttribute("feil", "true");
+			request.getSession().setAttribute("logginnfeil", "true");
 			response.sendRedirect("Logginn");
 		}
 	}
