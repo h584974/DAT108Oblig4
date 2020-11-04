@@ -11,10 +11,10 @@ class PaameldingsskjemaController {
 		const root = document.gegElementById("rootform");
 		const passdiv = document.querySelector("#passorddiv");
 		const passinput = passdiv.querySelector("#passord");
-		passinput.addEventListener("eventinput",valider(passinput.textContent),true);
+		passinput.addEventListener("input",valider(passinput.textContent,passinput),true);
 	}
 
-	valider(passord) {
+	valider(passord,passinput) {
 		if(passord.length < 8) {
 			passinput.style.border = "solid red";
 		}

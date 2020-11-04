@@ -37,7 +37,17 @@
 				<label for="password">Passord:</label> <input type="password"
 					name="passord" placeholder="Passord" id="passord" pattern=".{8,64}" required 
 					onmouseover="this.parentElement.querySelector('#passordinfo').textContent = 'Passordstyrke regnes ut ifra lengde. 1-7 er ugyldig. 8-15 er svakt. 16-64 er sterkt.'"
-					onmouseout="this.parentElement.querySelector('#passordinfo').textContent = '${passordFeilmelding}'"/> 
+					onmouseout="this.parentElement.querySelector('#passordinfo').textContent = '${passordFeilmelding}'"
+					oninput="
+						if(this.value.length < 8) {
+							this.style.border = 'solid blue';
+							this.parentElement.querySelector('#passordinfo').textContent = this.value;
+						} else if(this.textContent.length < 16) {
+							this.style.border = 'solid yellow'
+						} else {
+							this.style.border = 'solid green'
+						}
+					"/> 
 					<font id="passordinfo" color="red">${passordFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
