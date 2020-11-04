@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="js/PaameldingsskjemaController.js" defer></script>
 <meta charset="UTF-8">
 <!-- Fra https://purecss.io/ -->
 <link rel="stylesheet"
@@ -20,12 +19,12 @@
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
-					name="fornavn" value="${fornavn}" placeholder="Fornavn" pattern=".{2,}" required/> 
+					name="fornavn" value="${fornavn}" placeholder="Fornavn" pattern="^[A-ZÆØÅ]{1}[a-zA-ZæøåÆØÅ]+[ -]*[a-zA-ZæøåÆØÅ]*$" required/> 
 					<font color="red">${fornavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input type="text"
-					name="etternavn" value="${etternavn}" placeholder="Etternavn" pattern=".{2,}" required /> 
+					name="etternavn" value="${etternavn}" placeholder="Etternavn" pattern="[A-ZÆØÅ]{1}[a-zA-ZæøåÆØÅ]+" required /> 
 					<font color="red">${etternavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
@@ -39,15 +38,17 @@
 					onmouseover="this.parentElement.querySelector('#passordinfo').textContent = 'Passordstyrke regnes ut ifra lengde. 1-7 er ugyldig. 8-15 er svakt. 16-64 er sterkt.'"
 					onmouseout="this.parentElement.querySelector('#passordinfo').textContent = '${passordFeilmelding}'"
 					oninput="
-						if(this.value.length < 8) {
-							this.style.border = 'solid blue';
-							this.parentElement.querySelector('#passordinfo').textContent = this.value;
-						} else if(this.textContent.length < 16) {
-							this.style.border = 'solid yellow'
-						} else {
-							this.style.border = 'solid green'
-						}
-					"/> 
+							if(this.value.length < 8) {
+								this.style.border = 'solid red';
+							}
+							else if(this.value.length < 16) {
+								this.style.border = 'solid yellow';
+							}
+							else {
+								this.style.border = 'solid green';
+							}
+					"
+					/> 
 					<font id="passordinfo" color="red">${passordFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
