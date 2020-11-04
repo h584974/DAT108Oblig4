@@ -2,19 +2,11 @@ input[type=password]:invalid {
 	border: solid red;
 }
 
-input[type=number]:invalid {
-	border: solid red;
-}
-
 input[type=text]:invalid {
 	border: solid red;
 }
 
 input[type=password]:valid {
-	border: solid green;
-}
-
-input[type=number]:valid {
 	border: solid green;
 }
 

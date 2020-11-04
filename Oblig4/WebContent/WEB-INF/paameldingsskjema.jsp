@@ -20,12 +20,12 @@
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
-					name="fornavn" value="${fornavn}" placeholder="Fornavn" required/> 
+					name="fornavn" value="${fornavn}" placeholder="Fornavn" pattern=".{2,}" required/> 
 					<font color="red">${fornavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input type="text"
-					name="etternavn" value="${etternavn}" placeholder="Etternavn" required /> 
+					name="etternavn" value="${etternavn}" placeholder="Etternavn" pattern=".{2,}" required /> 
 					<font color="red">${etternavnFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
@@ -33,15 +33,15 @@
 					name="mobil" value="${mobil}" placeholder="Mobilnummer" pattern="[0-9]{8}" required/> 
 					<font color="red">${mobilFeilmelding}</font>
 			</div>
-			<div class="pure-control-group" id="passord">
+			<div class="pure-control-group" id="passorddiv">
 				<label for="password">Passord:</label> <input type="password"
-					name="passord" value="" placeholder="Passord" pattern=".{8,64}" required/> 
+					name="passord" id="passord" pattern=".{8,64}" required/> 
 					<font color="red">${passordFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="passordRepetert">Passord repetert:</label> <input
 					type="password" name="passordRepetert"
-					value="" placeholder="Repeter passord" required/> 
+					placeholder="Repeter passord" required/> 
 					<font color="red">${passordrepetertFeilmelding}</font>
 			</div>
 			<div class="pure-control-group">

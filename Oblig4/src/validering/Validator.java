@@ -2,17 +2,21 @@ package validering;
 
 public class Validator {
 	
+	private final String ANY_LETTER = "[a-zA-ZÊ¯Â∆ÿ≈]";
+	
 	public Validator() {}
 	
 	public boolean validerFornavn(String fornavn) {
-		return fornavn != null && !fornavn.isBlank() && fornavn.length() <= 50;
+		return (fornavn != null && !fornavn.isBlank() && fornavn.length() <= 50 && fornavn.length() >= 2 &&
+				Character.isUpperCase(fornavn.charAt(0))) ? fornavn.matches("^" + ANY_LETTER + "+[ -]*" + ANY_LETTER + "*$") : false;
 	}
 	
 	public boolean validerEtternavn(String etternavn) {
-		return etternavn != null && !etternavn.isBlank() && etternavn.length() <= 50;
+		return (etternavn != null && !etternavn.isBlank() && etternavn.length() <= 50 && etternavn.length() >= 2 &&
+				Character.isUpperCase(etternavn.charAt(0))) ? etternavn.matches("^" + ANY_LETTER + "+$") : false;
 	}
 
-	public boolean validerMobil(String mobil) {
+	public boolean validerMobil(String mobil) {	
 		int mobilnr = -1;
 		try {
 			mobilnr = Integer.parseInt(mobil);
